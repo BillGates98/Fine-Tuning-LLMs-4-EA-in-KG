@@ -1,0 +1,531 @@
+[
+    {
+        "label": "load_dataset",
+        "importPath": "datasets",
+        "description": "datasets",
+        "isExtraImport": true,
+        "detail": "datasets",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "datasets",
+        "description": "datasets",
+        "isExtraImport": true,
+        "detail": "datasets",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "GPT2Tokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "GPT2ForSequenceClassification",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "AutoTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "AutoModelForCausalLM",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingArguments",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "Trainer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "AutoModelForSequenceClassification",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "DataCollatorForLanguageModeling",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "GPT2Tokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "GPT2ForSequenceClassification",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingArguments",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "Trainer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "GPT2Tokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "GPT2ForSequenceClassification",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "AutoTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "AutoModelForCausalLM",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingArguments",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "Trainer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "AutoModelForSequenceClassification",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "DataCollatorForLanguageModeling",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Graph",
+        "importPath": "rdflib",
+        "description": "rdflib",
+        "isExtraImport": true,
+        "detail": "rdflib",
+        "documentation": {}
+    },
+    {
+        "label": "Graph",
+        "importPath": "rdflib",
+        "description": "rdflib",
+        "isExtraImport": true,
+        "detail": "rdflib",
+        "documentation": {}
+    },
+    {
+        "label": "Graph",
+        "importPath": "rdflib",
+        "description": "rdflib",
+        "isExtraImport": true,
+        "detail": "rdflib",
+        "documentation": {}
+    },
+    {
+        "label": "Graph",
+        "importPath": "rdflib",
+        "description": "rdflib",
+        "isExtraImport": true,
+        "detail": "rdflib",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "ComputeFile",
+        "importPath": "compute_files",
+        "description": "compute_files",
+        "isExtraImport": true,
+        "detail": "compute_files",
+        "documentation": {}
+    },
+    {
+        "label": "ComputeFile",
+        "importPath": "compute_files",
+        "description": "compute_files",
+        "isExtraImport": true,
+        "detail": "compute_files",
+        "documentation": {}
+    },
+    {
+        "label": "ComputeFile",
+        "importPath": "compute_files",
+        "description": "compute_files",
+        "isExtraImport": true,
+        "detail": "compute_files",
+        "documentation": {}
+    },
+    {
+        "label": "ComputeFile",
+        "importPath": "compute_files",
+        "description": "compute_files",
+        "isExtraImport": true,
+        "detail": "compute_files",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "KAN",
+        "importPath": "kan",
+        "description": "kan",
+        "isExtraImport": true,
+        "detail": "kan",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "precision_recall_fscore_support",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "tiktoken",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tiktoken",
+        "description": "tiktoken",
+        "detail": "tiktoken",
+        "documentation": {}
+    },
+    {
+        "label": "PCA",
+        "importPath": "sklearn.decomposition",
+        "description": "sklearn.decomposition",
+        "isExtraImport": true,
+        "detail": "sklearn.decomposition",
+        "documentation": {}
+    },
+    {
+        "label": "KanLearning",
+        "importPath": "kan_learning",
+        "description": "kan_learning",
+        "isExtraImport": true,
+        "detail": "kan_learning",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "validators",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "validators",
+        "description": "validators",
+        "detail": "validators",
+        "documentation": {}
+    },
+    {
+        "label": "Sampling",
+        "importPath": "sampling",
+        "description": "sampling",
+        "isExtraImport": true,
+        "detail": "sampling",
+        "documentation": {}
+    },
+    {
+        "label": "networkx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "networkx",
+        "description": "networkx",
+        "detail": "networkx",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "BERTFineTuner",
+        "kind": 6,
+        "importPath": "bert",
+        "description": "bert",
+        "peekOfCode": "class BERTFineTuner:\n    def __init__(self, data_dir=''):\n        self.data_dir = data_dir\n    def load_data(self):\n        dataset = load_dataset(\"csv\", data_dir=self.data_dir)\n        return dataset\n    def tokenizer_dataset(self):\n        dataset = self.load_data()\n        tokenizer = AutoTokenizer.from_pretrained(\n            \"google-bert/bert-base-cased\")",
+        "detail": "bert",
+        "documentation": {}
+    },
+    {
+        "label": "base_dir",
+        "kind": 5,
+        "importPath": "bert",
+        "description": "bert",
+        "peekOfCode": "base_dir = \"./outputs/merged/\"\nbenchmark_datasets = [\"person\", \"restaurant\", \"anatomy\",\n                      \"doremus\", \"SPIMBENCH_small-2019\", \"SPIMBENCH_large-2016\"]\nfor dir in benchmark_datasets:\n    print('Datasets  : ', dir)\n    BERTFineTuner(data_dir=base_dir+dir).run()\n    print('\\n \\n')",
+        "detail": "bert",
+        "documentation": {}
+    },
+    {
+        "label": "benchmark_datasets",
+        "kind": 5,
+        "importPath": "bert",
+        "description": "bert",
+        "peekOfCode": "benchmark_datasets = [\"person\", \"restaurant\", \"anatomy\",\n                      \"doremus\", \"SPIMBENCH_small-2019\", \"SPIMBENCH_large-2016\"]\nfor dir in benchmark_datasets:\n    print('Datasets  : ', dir)\n    BERTFineTuner(data_dir=base_dir+dir).run()\n    print('\\n \\n')",
+        "detail": "bert",
+        "documentation": {}
+    },
+    {
+        "label": "ComputeFile",
+        "kind": 6,
+        "importPath": "compute_files",
+        "description": "compute_files",
+        "peekOfCode": "class ComputeFile:\n    def __init__(self, input_path='', output_path=''):\n        self.input_path = input_path\n        self.output_path = output_path\n        self.input_files = []\n        self.output_files = []\n        self.extensions = ['.ttl', '.nt', '.rdf', '.owl', '.csv', '.json']\n    def build_graph(self, input_file=''):\n        graph = Graph()\n        graph.parse(input_file, format=get_format(value=input_file))",
+        "detail": "compute_files",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetStat",
+        "kind": 6,
+        "importPath": "dataset_stats",
+        "description": "dataset_stats",
+        "peekOfCode": "class DatasetStat:\n    def __init__(self, source='', target='', truth=''):\n        self.source = source\n        self.target = target\n        self.truth = truth\n    def load_rdf(self, file=''):\n        g = Graph()\n        g.parse(file)\n        return g\n    def statistics(self, graph=None):",
+        "detail": "dataset_stats",
+        "documentation": {}
+    },
+    {
+        "label": "GPTFineTuner",
+        "kind": 6,
+        "importPath": "gpt",
+        "description": "gpt",
+        "peekOfCode": "class GPTFineTuner:\n    def __init__(self, data_dir=''):\n        self.data_dir = data_dir\n    def load_data(self):\n        dataset = load_dataset(\n            \"csv\", data_dir=self.data_dir)  # '/content/person'\n        return dataset\n    def tokenizer_dataset(self):\n        dataset = self.load_data()\n        tokenizer = GPT2Tokenizer.from_pretrained(\"gpt2\")",
+        "detail": "gpt",
+        "documentation": {}
+    },
+    {
+        "label": "KanLearning",
+        "kind": 6,
+        "importPath": "kan_learning",
+        "description": "kan_learning",
+        "peekOfCode": "class KanLearning:\n    def __init__(self, input_size=-1, output_size=-1, train_input=None, train_label=None, test_input=None, test_label=None):\n        self.device = torch.device(\n            \"cuda\") if torch.cuda.is_available() else torch.device(\"cpu\")\n        self.dataset = {}\n        self.dataset['train_input'] = torch.from_numpy(\n            train_input).type(torch.float32)\n        self.dataset['test_input'] = torch.from_numpy(\n            test_input).type(torch.float32)\n        self.dataset['train_label'] = torch.from_numpy(",
+        "detail": "kan_learning",
+        "documentation": {}
+    },
+    {
+        "label": "LinKan",
+        "kind": 6,
+        "importPath": "linkan",
+        "description": "linkan",
+        "peekOfCode": "class LinKan:\n    def __init__(self, test='test', train='train'):\n        self.test = test\n        self.train = train\n    def normalize(self, x):\n        x = np.array(x)\n        value = (x - min(x)) / (max(x) - min(x))\n        return value\n    def tokenizer(self, text):\n        encoding = tiktoken.get_encoding(\"cl100k_base\")",
+        "detail": "linkan",
+        "documentation": {}
+    },
+    {
+        "label": "Linking",
+        "kind": 6,
+        "importPath": "linking",
+        "description": "linking",
+        "peekOfCode": "class Linking:\n    def __init__(self, source='', target='', truth='', suffix='', random_size=0.3):\n        self.source = source\n        self.target = target\n        self.limit = -1\n        self.truth = truth\n        self.suffix = suffix\n        self.truth_subjects = {}\n        self.random_size = random_size\n    def load_graph(self, file=''):",
+        "detail": "linking",
+        "documentation": {}
+    },
+    {
+        "label": "Main",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Main:\n    def __init__(self, source='', target='', top=5):\n        self.source = source\n        self.target = target\n        self.nx_graph = nx.Graph()\n        self.source_subjects = {}\n        self.target_subjects = {}\n        self.neighbors = {}\n        self.top = top\n        self.sim_ceil = 0.5",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "CSVMerger",
+        "kind": 6,
+        "importPath": "merge_data",
+        "description": "merge_data",
+        "peekOfCode": "class CSVMerger:\n    def __init__(self, input_dir, output_file):\n        self.input_dir = input_dir\n        self.output_file = output_file\n        self.directories = ['person', 'anatomy', 'doremus',\n                            'restaurant', 'SPIMBENCH_small-2019', 'SPIMBENCH_large-2016']\n    def merge(self):\n        # Get a list of all the .csv files in the input directory\n        csv_files = []\n        for directory in self.directories:",
+        "detail": "merge_data",
+        "documentation": {}
+    },
+    {
+        "label": "Sampling",
+        "kind": 6,
+        "importPath": "sampling",
+        "description": "sampling",
+        "peekOfCode": "class Sampling:\n    def __init__(self, suffix='', source_subjects=[], target_subjects=[], entities={}, random_size=0.2):\n        self.suffix = suffix\n        self.output_path = './outputs/' + self.suffix + '/'\n        if os.path.exists(self.output_path) is False:\n            os.makedirs(self.output_path)\n        self.source_subjects = source_subjects\n        self.target_subjects = target_subjects\n        self.entities = entities\n        self.random_size = random_size",
+        "detail": "sampling",
+        "documentation": {}
+    }
+]
