@@ -1,14 +1,16 @@
 from datasets import load_dataset
 import pandas as pd
-from transformers import GPT2Tokenizer, GPT2ForSequenceClassification, AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer, AutoModelForSequenceClassification, DataCollatorForLanguageModeling
+from transformers import AutoTokenizer, TrainingArguments, Trainer, AutoModelForSequenceClassification
 import evaluate
 import numpy as np
+import argparse
 
 
 class BERTFineTuner:
 
-    def __init__(self, data_dir=''):
+    def __init__(self, data_dir='', enable_trainer=True):
         self.data_dir = data_dir
+        self.enable_trainer = enable_trainer
 
     def load_data(self):
         dataset = load_dataset("csv", data_dir=self.data_dir)
@@ -60,24 +62,43 @@ class BERTFineTuner:
             gradient_accumulation_steps=4
         )
 
-        trainer = Trainer(
-            model=model,
-            args=training_args,
-            train_dataset=train,
-            eval_dataset=eval,
-            compute_metrics=self.compute_metrics,
+        if self.enable_trainer:
+            trainer = Trainer(
+                model=model,
+                args=training_args,
+                train_dataset=train,
+                eval_dataset=eval,
+                compute_metrics=self.compute_metrics,
 
-        )
+            )
+            trainer.train()
+        else:
+            trainer = Trainer(
+                model=model,
+                args=training_args,
+                train_dataset=None,
+                eval_dataset=eval,
+                compute_metrics=self.compute_metrics,
 
-        trainer.train()
+            )
         trainer.evaluate()
 
 
-base_dir = "./outputs/merged/"
-benchmark_datasets = ["person", "restaurant", "anatomy",
-                      "doremus", "SPIMBENCH_small-2019", "SPIMBENCH_large-2016"]
+if __name__ == "__main__":
+    def arg_manager():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--base_dir", type=str, default="./outputs/")
+        parser.add_argument("--enable_trainer", type=bool, default=True)
+        return parser.parse_args()
 
-for dir in benchmark_datasets:
-    print('Datasets  : ', dir)
-    BERTFineTuner(data_dir=base_dir+dir).run()
-    print('\n \n')
+    args = arg_manager()
+
+    base_dir = args.base_dir  # "./outputs/merged/"
+    benchmark_datasets = ["person", "restaurant", "anatomy",
+                          "doremus", "SPIMBENCH_small-2019", "SPIMBENCH_large-2016"]
+
+    for dir in benchmark_datasets:
+        print('Datasets  : ', dir)
+        BERTFineTuner(data_dir=base_dir+dir,
+                      enable_trainer=args.enable_trainer).run()
+        print('\n \n')

@@ -9,8 +9,9 @@ import time
 
 class GPTFineTuner:
 
-    def __init__(self, data_dir=''):
+    def __init__(self, data_dir='', enable_trainer=True):
         self.data_dir = data_dir
+        self.enable_trainer = enable_trainer
 
     def load_data(self):
         dataset = load_dataset(
@@ -58,17 +59,25 @@ class GPTFineTuner:
             per_device_eval_batch_size=1,    # Optionally, reduce for evaluation as well
             gradient_accumulation_steps=4
         )
+        if self.enable_trainer:
+            trainer = Trainer(
+                model=model,
+                args=training_args,
+                train_dataset=train,
+                eval_dataset=eval,
+                compute_metrics=self.compute_metrics,
 
-        trainer = Trainer(
-            model=model,
-            args=training_args,
-            train_dataset=train,
-            eval_dataset=eval,
-            compute_metrics=self.compute_metrics,
+            )
+            trainer.train()
+        else:
+            trainer = Trainer(
+                model=model,
+                args=training_args,
+                train_dataset=None,
+                eval_dataset=eval,
+                compute_metrics=self.compute_metrics,
 
-        )
-
-        trainer.train()
+            )
         trainer.evaluate()
 
 
@@ -76,20 +85,21 @@ if __name__ == "__main__":
 
     def arg_manager():
         parser = argparse.ArgumentParser()
-        parser.add_argument("--base_dir", type=str, default="./outputs/")
+        parser.add_argument("--base_dir", type=str,
+                            default="./outputs/merged/")
+        parser.add_argument("--enable_trainer", type=bool, default=True)
         return parser.parse_args()
 
     start = time.time()
     args = arg_manager()
     base_dir = args.base_dir
-
-    base_dir = "./outputs/merged/"
     benchmark_datasets = ["person", "restaurant", "anatomy",
                           "doremus", "SPIMBENCH_small-2019", "SPIMBENCH_large-2016"]
 
     for dir in benchmark_datasets:
         print('Datasets  : ', dir)
-        GPTFineTuner(data_dir=base_dir+dir).run()
+        GPTFineTuner(data_dir=base_dir+dir,
+                     enable_trainer=args.enable_trainer).run()
         print('\n \n')
 
     print('Running Time : ', (time.time() - start), ' seconds ')

@@ -5,5 +5,5 @@ done
 
 # job_individual_fine_tuning.sh
 
-python ./gpt.py --base_dir ./outputs/ >> ./outputs/output_gpt.txt
-python ./bert.py --base_dir ./outputs/ >> ./outputs/output_bert.txt
+python ./gpt.py --base_dir ./outputs/ --enable_trainer True >> ./outputs/output_gpt.txt
+python ./bert.py --base_dir ./outputs/ --enable_trainer True >> ./outputs/output_bert.txt

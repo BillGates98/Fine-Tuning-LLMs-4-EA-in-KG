@@ -25,31 +25,7 @@
         "documentation": {}
     },
     {
-        "label": "GPT2Tokenizer",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "GPT2ForSequenceClassification",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
         "label": "AutoTokenizer",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "AutoModelForCausalLM",
         "importPath": "transformers",
         "description": "transformers",
         "isExtraImport": true,
@@ -74,14 +50,6 @@
     },
     {
         "label": "AutoModelForSequenceClassification",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "DataCollatorForLanguageModeling",
         "importPath": "transformers",
         "description": "transformers",
         "isExtraImport": true,
@@ -203,6 +171,15 @@
         "documentation": {}
     },
     {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -290,15 +267,6 @@
         "description": "compute_files",
         "isExtraImport": true,
         "detail": "compute_files",
-        "documentation": {}
-    },
-    {
-        "label": "argparse",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "argparse",
-        "description": "argparse",
-        "detail": "argparse",
         "documentation": {}
     },
     {
@@ -425,25 +393,7 @@
         "kind": 6,
         "importPath": "bert",
         "description": "bert",
-        "peekOfCode": "class BERTFineTuner:\n    def __init__(self, data_dir=''):\n        self.data_dir = data_dir\n    def load_data(self):\n        dataset = load_dataset(\"csv\", data_dir=self.data_dir)\n        return dataset\n    def tokenizer_dataset(self):\n        dataset = self.load_data()\n        tokenizer = AutoTokenizer.from_pretrained(\n            \"google-bert/bert-base-cased\")",
-        "detail": "bert",
-        "documentation": {}
-    },
-    {
-        "label": "base_dir",
-        "kind": 5,
-        "importPath": "bert",
-        "description": "bert",
-        "peekOfCode": "base_dir = \"./outputs/merged/\"\nbenchmark_datasets = [\"person\", \"restaurant\", \"anatomy\",\n                      \"doremus\", \"SPIMBENCH_small-2019\", \"SPIMBENCH_large-2016\"]\nfor dir in benchmark_datasets:\n    print('Datasets  : ', dir)\n    BERTFineTuner(data_dir=base_dir+dir).run()\n    print('\\n \\n')",
-        "detail": "bert",
-        "documentation": {}
-    },
-    {
-        "label": "benchmark_datasets",
-        "kind": 5,
-        "importPath": "bert",
-        "description": "bert",
-        "peekOfCode": "benchmark_datasets = [\"person\", \"restaurant\", \"anatomy\",\n                      \"doremus\", \"SPIMBENCH_small-2019\", \"SPIMBENCH_large-2016\"]\nfor dir in benchmark_datasets:\n    print('Datasets  : ', dir)\n    BERTFineTuner(data_dir=base_dir+dir).run()\n    print('\\n \\n')",
+        "peekOfCode": "class BERTFineTuner:\n    def __init__(self, data_dir='', enable_trainer=True):\n        self.data_dir = data_dir\n        self.enable_trainer = enable_trainer\n    def load_data(self):\n        dataset = load_dataset(\"csv\", data_dir=self.data_dir)\n        return dataset\n    def tokenizer_dataset(self):\n        dataset = self.load_data()\n        tokenizer = AutoTokenizer.from_pretrained(",
         "detail": "bert",
         "documentation": {}
     },
@@ -470,7 +420,7 @@
         "kind": 6,
         "importPath": "gpt",
         "description": "gpt",
-        "peekOfCode": "class GPTFineTuner:\n    def __init__(self, data_dir=''):\n        self.data_dir = data_dir\n    def load_data(self):\n        dataset = load_dataset(\n            \"csv\", data_dir=self.data_dir)  # '/content/person'\n        return dataset\n    def tokenizer_dataset(self):\n        dataset = self.load_data()\n        tokenizer = GPT2Tokenizer.from_pretrained(\"gpt2\")",
+        "peekOfCode": "class GPTFineTuner:\n    def __init__(self, data_dir='', enable_trainer=True):\n        self.data_dir = data_dir\n        self.enable_trainer = enable_trainer\n    def load_data(self):\n        dataset = load_dataset(\n            \"csv\", data_dir=self.data_dir)  # '/content/person'\n        return dataset\n    def tokenizer_dataset(self):\n        dataset = self.load_data()",
         "detail": "gpt",
         "documentation": {}
     },
