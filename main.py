@@ -110,8 +110,6 @@ class Main:
         print("selected candidates : ", len(neighbors))
         # print("neighbors : ", neighbors)
         # apply the recommendations algorithm
-        recommender = RecommenderSystem(source_subjects=self.source_subjects,
-                                        target_subjects=self.target_subjects, candidates=neighbors).run()
         return None
 
     def run(self):

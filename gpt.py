@@ -5,13 +5,15 @@ import evaluate
 import numpy as np
 import argparse
 import time
+import os
 
 
 class GPTFineTuner:
 
-    def __init__(self, data_dir='', enable_trainer=True):
+    def __init__(self, suffix='', data_dir='', enable_trainer=True):
         self.data_dir = data_dir
         self.enable_trainer = enable_trainer
+        self.suffix = suffix
 
     def load_data(self):
         dataset = load_dataset(
@@ -50,55 +52,62 @@ class GPTFineTuner:
 
     def run(self):
         train, eval = self.splitting()
-        model = GPT2ForSequenceClassification.from_pretrained(
-            "gpt2", num_labels=2)
+        from_saved = False
+        if 'merged' in self.suffix and os.path.exists(self.data_dir + '/../' + self.suffix):
+            model = GPT2ForSequenceClassification.from_pretrained(
+                self.data_dir + '/../' + self.suffix)
+            from_saved = True
+        else:
+            model = GPT2ForSequenceClassification.from_pretrained(
+                "gpt2", num_labels=2)
         training_args = TrainingArguments(
-            output_dir="test_trainer",
+            output_dir="gpt2_trainer",
             # evaluation_strategy="epoch",
             per_device_train_batch_size=1,  # Reduce batch size here
             per_device_eval_batch_size=1,    # Optionally, reduce for evaluation as well
             gradient_accumulation_steps=4
         )
-        if self.enable_trainer:
-            trainer = Trainer(
-                model=model,
-                args=training_args,
-                train_dataset=train,
-                eval_dataset=eval,
-                compute_metrics=self.compute_metrics,
 
-            )
+        trainer = Trainer(
+            model=model,
+            args=training_args,
+            train_dataset=train,
+            eval_dataset=eval,
+            compute_metrics=self.compute_metrics,
+
+        )
+        if not from_saved:
             trainer.train()
-        else:
-            trainer = Trainer(
-                model=model,
-                args=training_args,
-                train_dataset=None,
-                eval_dataset=eval,
-                compute_metrics=self.compute_metrics,
 
-            )
+        start_eval = time.time()
         trainer.evaluate()
+        print(
+            f' {self.suffix} : Evaluation Time : {(time.time() - start_eval)} seconds ')
+        if not from_saved:
+            trainer.save_model(self.data_dir + '/../' + self.suffix)
 
 
 if __name__ == "__main__":
 
     def arg_manager():
         parser = argparse.ArgumentParser()
-        parser.add_argument("--base_dir", type=str,
-                            default="./outputs/merged/")
+        parser.add_argument("--base_dir", type=str, default="./outputs/")
+        parser.add_argument("--suffix", type=str, default="model_gpt2")
         parser.add_argument("--enable_trainer", type=bool, default=True)
         return parser.parse_args()
 
     start = time.time()
     args = arg_manager()
     base_dir = args.base_dir
-    benchmark_datasets = ["person", "restaurant", "anatomy",
+    suffix = args.suffix
+    # "KnowledgeGraphsDataSet",
+    benchmark_datasets = ["KnowledgeGraphsDataSet", "Yago-Wiki", "person", "restaurant", "anatomy",
                           "doremus", "SPIMBENCH_small-2019", "SPIMBENCH_large-2016"]
 
-    for dir in benchmark_datasets:
-        print('Datasets  : ', dir)
-        GPTFineTuner(data_dir=base_dir+dir,
+    for dir in benchmark_datasets[0:2]:
+        print('Datasets on GPT-2 : ', dir)
+        _model_name = dir if not "merged" in base_dir else args.suffix
+        GPTFineTuner(suffix=_model_name, data_dir=base_dir+dir,
                      enable_trainer=args.enable_trainer).run()
         print('\n \n')
 

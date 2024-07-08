@@ -1,5 +1,6 @@
 from kan import KAN
 import matplotlib.pyplot as plt
+import time
 import torch
 import numpy as np
 import os
@@ -8,7 +9,7 @@ from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 
 class KanLearning:
 
-    def __init__(self, input_size=-1, output_size=-1, train_input=None, train_label=None, test_input=None, test_label=None):
+    def __init__(self, suffix=None, input_size=-1, output_size=-1, train_input=None, train_label=None, test_input=None, test_label=None):
         self.device = torch.device(
             "cuda") if torch.cuda.is_available() else torch.device("cpu")
         self.dataset = {}
@@ -22,6 +23,7 @@ class KanLearning:
             test_label[:, None]).type(torch.float32)
         self.input_size = input_size
         self.output_size = output_size
+        self.suffix = suffix
 
     def data_to_device(self):
         train_loader = torch.utils.data.DataLoader(torch.utils.data.TensorDataset(
@@ -79,7 +81,8 @@ class KanLearning:
 
         results = model.train(dataset, opt="LBFGS", steps=20, metrics=(
             train_acc, test_acc), device=self.device)
-
+        model.save_ckpt(name='kan_learning_'+self.suffix, folder='./kan_ckpts')
+        print("====================================")
         for i in range(len(results['train_acc'])):
             print(
                 f" ITER : {i+1} >> Train acc: {results['train_acc'][i]} # Test acc: {results['test_acc'][i]} ")
@@ -112,5 +115,9 @@ class KanLearning:
         print("Test target shape: {}".format(dataset['test_label'].shape))
         print("====================================")
         model = self.train_process(dataset=dataset)
+        start_time = time.time()
         metrics = self.test_process(model=model, data=dataset)
+        print(
+            f'{self.suffix} Running time of test : {time.time() - start_time} seconds ---')
+        print('===================================')
         return metrics

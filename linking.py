@@ -21,6 +21,7 @@ class Linking:
 
     def load_graph(self, file=''):
         graph = Graph()
+        print(file)
         graph.parse(file)
         return graph
 

@@ -26,12 +26,8 @@
 
     $ ./job_merged_fine_tuning.sh
 
-## 5. Final results
+## 5. Generalization on unseen data
 
-### 5.1. Evaluation on individual dataset :
+    $ ./job_merged4_fine_tuning.sh
 
-![screenshot](result_on_individual.png)
 
-### 5.2. Evaluation on merged dataset :
-
-![screenshot](result_on_merged.png)

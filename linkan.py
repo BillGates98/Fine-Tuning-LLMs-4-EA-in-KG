@@ -11,9 +11,10 @@ from kan_learning import KanLearning
 
 class LinKan:
 
-    def __init__(self, test='test', train='train'):
+    def __init__(self, suffix=None, test='test', train='train'):
         self.test = test
         self.train = train
+        self.suffix = suffix
 
     def normalize(self, x):
         x = np.array(x)
@@ -55,7 +56,7 @@ class LinKan:
 
         test_input = np.array(test['input'].to_list())
         test_label = np.array(test['label'].to_list())
-        output = KanLearning(input_size=train_input.shape[1], output_size=1, train_input=train_input,
+        output = KanLearning(suffix=self.suffix, input_size=train_input.shape[1], output_size=1, train_input=train_input,
                              train_label=train_label, test_input=test_input, test_label=test_label).run()
         return output
 
@@ -81,6 +82,6 @@ if __name__ == "__main__":
 
     print('Dataset : ', args.suffix)
 
-    LinKan(test=test, train=train).run()
+    LinKan(suffix=args.suffix, test=test, train=train).run()
     print('Running Time : ', (time.time() - start), ' seconds ')
     print('\n \n')
