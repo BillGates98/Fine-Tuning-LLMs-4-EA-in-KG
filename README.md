@@ -1,4 +1,4 @@
-# Fine-Tuning LLMs for EA in KG :dizzy:
+# Fine-Tuning LLMs and from-scratch training of KAN for EA in KG :dizzy:
 
 > Install Python :snake: (>=3.8) and dependencies.
 
