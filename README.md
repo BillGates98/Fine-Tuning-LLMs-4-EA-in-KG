@@ -30,4 +30,5 @@
 
     $ ./job_merged4_fine_tuning.sh
 
+## [Checkpoints of fine-tuned models](https://drive.google.com/drive/folders/1a_WUu006b6tDVsaC9by9S2Ip0bXaPxk0?usp=sharing)
 
