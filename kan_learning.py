@@ -11,7 +11,7 @@ class KanLearning:
 
     def __init__(self, suffix=None, input_size=-1, output_size=-1, train_input=None, train_label=None, test_input=None, test_label=None):
         self.device = torch.device(
-            "cuda") if torch.cuda.is_available() else torch.device("cpu")
+            "cpu") if torch.cuda.is_available() else torch.device("cpu")
         self.dataset = {}
         self.dataset['train_input'] = torch.from_numpy(
             train_input).type(torch.float32)
@@ -79,7 +79,7 @@ class KanLearning:
             print(metrics)
             return output
 
-        results = model.train(dataset, opt="LBFGS", steps=20, metrics=(
+        results = model.train(dataset, opt="LBFGS", steps=1, metrics=(
             train_acc, test_acc), device=self.device)
         model.save_ckpt(name='kan_learning_'+self.suffix, folder='./kan_ckpts')
         print("====================================")

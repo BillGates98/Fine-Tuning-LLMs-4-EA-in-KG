@@ -7,6 +7,7 @@ import tiktoken
 from sklearn.decomposition import PCA
 import numpy as np
 from kan_learning import KanLearning
+import string
 
 
 class LinKan:
@@ -22,11 +23,25 @@ class LinKan:
         return value
 
     def tokenizer(self, text):
-        encoding = tiktoken.get_encoding("cl100k_base")
-        # encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
-        encoded = encoding.encode(text)
+        symbols = string.printable
+        char_to_vec = {char: np.eye(len(symbols))[
+            i] for i, char in enumerate(symbols)}
+        vector_sum = np.zeros(len(symbols))
 
-        return encoded
+        for char in text:
+            if char in char_to_vec:
+                vector_sum += char_to_vec[char]
+        # print(vector_sum)
+        # exit()
+        return vector_sum
+
+    # def tokenizer(self, text):
+    #     encoding = tiktoken.get_encoding("cl100k_base")
+    #     # encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+    #     encoded = encoding.encode(text)
+    #     print(encoded)
+    #     exit()
+    #     return encoded
 
     def read_csv(self, path='', max_length=-1):
         data = pd.read_csv(path)
@@ -35,7 +50,7 @@ class LinKan:
         if max_length < 0:
             max_length = max(data['input'].apply(len))
         data['input'] = data['input'].apply(
-            lambda x: x + [0] * (max_length - len(x)))
+            lambda x: x)  # lambda x: x + [0] * (max_length - len(x))
         data['input'] = data['input'].apply(self.normalize)
         indexes = [i for i, v in enumerate(
             data['input']) if len(v) > max_length]
