@@ -32,3 +32,14 @@
 
 ## [Checkpoints of fine-tuned models](https://drive.google.com/drive/folders/1a_WUu006b6tDVsaC9by9S2Ip0bXaPxk0?usp=sharing)
 
+## Datasets
+
+> Statistics on the datasets
+
+![Statistics on the datasets](./LLM4EA-StatisticDatasets.png)
+
+> Datasets Splitting
+
+![Datasets Splitting](./LLM4EA-DataSplitting.png)
+
+
